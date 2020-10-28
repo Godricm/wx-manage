@@ -1,0 +1,81 @@
+<template>
+  <el-container>
+  <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <el-menu :default-openeds="['1']">
+      <el-submenu index="1">
+        <span slot="title">自动回复</span>
+        <el-menu-item-group>
+          <el-menu-item index="1">打开客服回复</el-menu-item>
+          <el-menu-item index="1-1">关注后自动回复</el-menu-item>
+          <el-menu-item index="1-2">关键词回复</el-menu-item>
+          <el-menu-item index="1-3">智能引导语</el-menu-item>
+          <el-menu-item index="1-4">收到消息时回复</el-menu-item>
+          <el-menu-item index="1-5">系统客服回复</el-menu-item>
+          <el-menu-item index="1-6">转人工客服</el-menu-item>
+        </el-menu-item-group> 
+      </el-submenu>
+      <el-menu-item index="2">
+        <span slot="title">智能菜单</span>
+      </el-menu-item>
+      <el-menu-item index="3">
+        <span slot="title">自动回复设置</span> 
+      </el-menu-item>
+      <el-menu-item index="4">
+        <span slot="title">客服接待设置</span> 
+      </el-menu-item>
+    </el-menu>
+  </el-aside>
+  
+  <el-container>
+    <el-header style="text-align: right; font-size: 12px">
+      <el-dropdown>
+        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>查看</el-dropdown-item>
+          <el-dropdown-item>新增</el-dropdown-item>
+          <el-dropdown-item>删除</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <span>王小虎</span>
+    </el-header>
+    
+    <el-main>
+      <el-table :data="tableData">
+        <el-table-column prop="date" label="日期" width="140">
+        </el-table-column>
+        <el-table-column prop="name" label="姓名" width="120">
+        </el-table-column>
+        <el-table-column prop="address" label="地址">
+        </el-table-column>
+      </el-table>
+    </el-main>
+  </el-container>
+</el-container>
+</template>
+
+<style>
+  .el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+  }
+  
+  .el-aside {
+    color: #333;
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+      const item = {
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      };
+      return {
+        tableData: Array(20).fill(item)
+      }
+    }
+  };
+</script>
